@@ -61,16 +61,24 @@ public class InetAddressExample{
       
       
          //The Binary Quad Format
+         
+         //Declared the String var to be able to remove the last period outside of the for-each loop
+         String var = "";
+         
          System.out.println("\n\nThe Binary Quad Format:");  
          for (String str : array){
             int bin = Integer.parseInt(str);
-            String binaryFormat = Integer.toBinaryString(bin);
-            System.out.print(binaryFormat +".");
+            String binaryFormat = Integer.toBinaryString(bin) + ".";
+            var += binaryFormat;
+            //System.out.print(binaryFormat);
          }
          
+         //moved the print statement out of the for-each to remove the period at the end of the string
+         System.out.print(var.substring(0, var.length() -1));
          
-         System.out.println("\n\nThe decimal dotted-quad format:"); 
-         System.out.println(address.getHostAddress());
+         
+         System.out.println("\n\nThe Decimal Dotted-Quad Format:"); 
+         System.out.println(address.getHostAddress() );
          
          
          
